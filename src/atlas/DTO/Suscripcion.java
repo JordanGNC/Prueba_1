@@ -1,23 +1,21 @@
 package atlas.DTO;
 
-import java.util.Date;
-
 public class Suscripcion {
     private int Numero;
     private Usuario Usuario;
-    private Date FechaInicio;
+    private String FechaInicio;
     private int AbonoTotal;
     private String Equipos;
     
     public Suscripcion(){
         this.Numero = 0;
         this.Usuario = new Usuario();
-        this.FechaInicio = new Date();
+        this.FechaInicio = "";
         this.AbonoTotal = 0;
         this.Equipos = "";
     }
     
-    public Suscripcion(int Numero,Usuario Usuario,Date FechaInicio,int AbonoTotal,String Equipos){
+    public Suscripcion(int Numero,Usuario Usuario,String FechaInicio,int AbonoTotal,String Equipos){
         this.Numero = Numero;
         this.Usuario = Usuario;
         this.FechaInicio = FechaInicio;
@@ -30,7 +28,10 @@ public class Suscripcion {
     }
 
     public void setNumero(int Numero) {
-        this.Numero = Numero;
+        if(Numero >= 0){
+            this.Numero = Numero;       
+        }
+
     }
 
     public Usuario getUsuario() {
@@ -41,11 +42,11 @@ public class Suscripcion {
         this.Usuario = Usuario;
     }
 
-    public Date getFechaInicio() {
+    public String getFechaInicio() {
         return FechaInicio;
     }
 
-    public void setFechaInicio(Date FechaInicio) {
+    public void setFechaInicio(String FechaInicio) {
         this.FechaInicio = FechaInicio;
     }
 
@@ -54,7 +55,10 @@ public class Suscripcion {
     }
 
     public void setAbonoTotal(int AbonoTotal) {
-        this.AbonoTotal = AbonoTotal;
+        if(AbonoTotal >= 0){
+            this.AbonoTotal = AbonoTotal;        
+        }
+
     }
 
     public String getEquipos() {
@@ -65,6 +69,29 @@ public class Suscripcion {
         this.Equipos = Equipos;
     }
     
+    public void agregarSuscripcion(Club c){
+        if(!this.Equipos.equals("")){
+            this.Equipos += "; ";
+        }
+        this.Equipos += c.toString();
+        this.AbonoTotal += c.getValorSuscripcion();
+    }
     
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("============\n");
+        sb.append("Venta N°");
+        sb.append(this.Numero);
+        sb.append("\nTotal: $");
+        sb.append(this.AbonoTotal);
+        sb.append("\n============\n");
+        sb.append("Cliente: ");
+        sb.append(this.Usuario.getNombreCompleto());
+        sb.append("\n============\n");
+        sb.append(this.Equipos);
+        
+        return sb.toString();
+    }
     
 }

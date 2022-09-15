@@ -1,6 +1,7 @@
 package atlas.DTO;
 
 public class Club {
+    int correlativo = 9;
     private String Codigo;
     private String Nombre;
     private String NombreFundador;
@@ -36,16 +37,14 @@ public class Club {
         return Codigo;
     }
 
-    public void setCodigo(String Codigo) {
-        this.Codigo = Codigo;
+    public void setNombre(String nombre) {
+        String codigomod = nombre.substring(0, 2)+"H"+ ++correlativo;
+        this.Nombre = nombre;
+        this.Codigo = codigomod;
     }
 
     public String getNombre() {
         return Nombre;
-    }
-
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
     }
 
     public String getNombreFundador() {
@@ -61,7 +60,10 @@ public class Club {
     }
 
     public void setAñoFundacion(int AñoFundacion) {
-        this.AñoFundacion = AñoFundacion;
+        if(AñoFundacion >= 0){
+            this.AñoFundacion = AñoFundacion;            
+        }
+
     }
 
     public String getPaisOrigen() {
@@ -85,7 +87,9 @@ public class Club {
     }
 
     public void setValorSuscripcion(int ValorSuscripcion) {
-        this.ValorSuscripcion = ValorSuscripcion;
+        if(ValorSuscripcion >= 0){
+            this.ValorSuscripcion = ValorSuscripcion;        
+        }
     }
 
     public String getColores() {
@@ -95,6 +99,5 @@ public class Club {
     public void setColores(String Colores) {
         this.Colores = Colores;
     }
-    
     
 }
