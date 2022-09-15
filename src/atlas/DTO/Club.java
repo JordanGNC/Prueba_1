@@ -10,6 +10,28 @@ public class Club {
     private int ValorSuscripcion;
     private String Colores;
     
+    public Club(){
+        this.Codigo = "";
+        this.Nombre = "";
+        this.NombreFundador = "";
+        this.AñoFundacion = 0;
+        this.PaisOrigen = "";
+        this.Lema = "";
+        this.ValorSuscripcion = 0;
+        this.Colores = "";
+    }
+    
+    public Club(String Codigo,String Nombre,String NombreFundador,int AñoFundacion,String PaisOrigen,String Lema,int ValorSuscripcion,String Colores){
+        this.Codigo = Codigo;
+        this.Nombre = Nombre;
+        this.NombreFundador = NombreFundador;
+        this.AñoFundacion = AñoFundacion;
+        this.PaisOrigen = PaisOrigen;
+        this.Lema = Lema;
+        this.ValorSuscripcion = ValorSuscripcion;
+        this.Colores = Colores;
+    }
+    
     public String getCodigo() {
         return Codigo;
     }

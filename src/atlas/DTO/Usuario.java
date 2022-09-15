@@ -11,6 +11,31 @@ public class Usuario {
     private String NombreUsuario;
     private String Contraseña;
  
+    public Usuario(){
+        this.ID = 1000;
+        this.NombreCompleto = "";
+        this.Rut = 0;
+        this.Dv = "";
+        this.FechaNac = "";
+        this.Telefono = 0;
+        this.Email = "";
+        this.NombreUsuario = "";
+        this.Contraseña = "";
+    }   
+
+   public Usuario(int ID,String NombreCompleto,int Rut,String Dv,String FechaNac,int Telefono,String Email,String NombreUsuario,String Contraseña){
+       this.ID = ID;
+       this.NombreCompleto = NombreCompleto;
+       this.NombreUsuario = NombreUsuario;
+       this.Rut = Rut;
+       this.Dv = Dv;
+       this.FechaNac = FechaNac;
+       this.Telefono = Telefono;
+       this.Email = Email;
+       this.NombreUsuario = NombreUsuario;
+       this.Contraseña = Contraseña;
+   }
+    
     public int getID() {
         return ID;
     }

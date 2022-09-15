@@ -9,6 +9,22 @@ public class Suscripcion {
     private int AbonoTotal;
     private String Equipos;
     
+    public Suscripcion(){
+        this.Numero = 0;
+        this.Usuario = new Usuario();
+        this.FechaInicio = new Date();
+        this.AbonoTotal = 0;
+        this.Equipos = "";
+    }
+    
+    public Suscripcion(int Numero,Usuario Usuario,Date FechaInicio,int AbonoTotal,String Equipos){
+        this.Numero = Numero;
+        this.Usuario = Usuario;
+        this.FechaInicio = FechaInicio;
+        this.AbonoTotal = AbonoTotal;
+        this.Equipos = "";
+    }
+    
     public int getNumero() {
         return Numero;
     }
