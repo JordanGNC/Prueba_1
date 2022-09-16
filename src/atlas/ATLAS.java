@@ -75,7 +75,7 @@ public class ATLAS {
         System.out.println("\n\nSuscripcion de usuario 1\n");
         
         Suscripcion su1 = new Suscripcion();
-        su1.setNumero(1000+(10*++correlativosu));
+        su1.setNumero(990+(10*++correlativosu));
         su1.setUsuario(us1);
         su1.setFechaInicio(nuevafecha);
         su1.agregarSuscripcion(cl1);
@@ -86,7 +86,7 @@ public class ATLAS {
         System.out.println("\n\nSuscripcion de usuario 2\n");
         
         Suscripcion su2 = new Suscripcion();
-        su2.setNumero(1000+(10*++correlativosu));
+        su2.setNumero(990+(10*++correlativosu));
         su2.setUsuario(us2);
         su2.setFechaInicio(nuevafecha);
         su2.agregarSuscripcion(cl2);
