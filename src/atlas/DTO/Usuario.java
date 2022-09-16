@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public class Usuario {
-    int correlativo = 0;
     private int ID;
     private String NombreCompleto;
     private int Rut;
@@ -16,7 +15,7 @@ public class Usuario {
     private String Contraseña;
  
     public Usuario(){
-        this.ID = 999;
+        this.ID = 0;
         this.NombreCompleto = "";
         this.Rut = 0;
         this.Dv = "";
@@ -68,7 +67,7 @@ public class Usuario {
             this.Rut = Run;
             this.Dv = Dv+"";
         }else{
-            System.out.println("El rut ingresado es invalido");
+            System.out.println("El rut ingresado no existe");
         }
     }
     
@@ -116,11 +115,11 @@ public class Usuario {
             if(Email.contains(".cl")||Email.contains(".com")){
                 this.Email = Email;
             }else{
-                System.out.println("Email invalido");
+                System.out.println("Email invalido (Asegurece que termine con .cl o .com)");
             }
             
     }else{
-            System.out.println("Email invalido");
+            System.out.println("Email invalido (Asegurece que contenga @)");
         }
 
     }
@@ -180,8 +179,30 @@ public class Usuario {
         } catch (Exception e) {
         }
         return validacion;
+                        
     }
     
-    
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("ID: ");
+        sb.append(this.ID);
+        sb.append("\nNombre Completo: ");
+        sb.append(this.NombreCompleto);
+        sb.append("\nRut: ");
+        sb.append(this.Rut);
+        sb.append(this.Dv);
+        sb.append("\nFecha de nacimiento: ");
+        sb.append(this.FechaNac);
+        sb.append("\nTelefono: ");
+        sb.append(this.Telefono);
+        sb.append("\nEmail: ");
+        sb.append(this.Email);
+        sb.append("\nNombre de usuario: ");
+        sb.append(this.NombreUsuario);
+        sb.append("\nContrasena: ");
+        sb.append(this.Contraseña);
+        return sb.toString();
+    }
     
 }

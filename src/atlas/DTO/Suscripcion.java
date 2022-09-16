@@ -30,6 +30,8 @@ public class Suscripcion {
     public void setNumero(int Numero) {
         if(Numero >= 0){
             this.Numero = Numero;       
+        }else{
+            System.out.println("El valor ingresado no puede ser negativo (Numero)");
         }
 
     }
@@ -57,6 +59,8 @@ public class Suscripcion {
     public void setAbonoTotal(int AbonoTotal) {
         if(AbonoTotal >= 0){
             this.AbonoTotal = AbonoTotal;        
+        }else{
+            System.out.println("El valor ingresado no puede ser negativo (AbonoTotal)");
         }
 
     }
@@ -71,24 +75,24 @@ public class Suscripcion {
     
     public void agregarSuscripcion(Club c){
         if(!this.Equipos.equals("")){
-            this.Equipos += "; ";
+            this.Equipos += "\n\n";
         }
-        this.Equipos += c.toString();
+        this.Equipos += c.toSuscripcion();
         this.AbonoTotal += c.getValorSuscripcion();
     }
     
     @Override
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        sb.append("============\n");
-        sb.append("Venta N°");
+        sb.append("--------------------------------------------------\n");
+        sb.append("Venta Numero: ");
         sb.append(this.Numero);
         sb.append("\nTotal: $");
         sb.append(this.AbonoTotal);
-        sb.append("\n============\n");
+        sb.append("\n--------------------------------------------------\n");
         sb.append("Cliente: ");
         sb.append(this.Usuario.getNombreCompleto());
-        sb.append("\n============\n");
+        sb.append("\n--------------------------------------------------\n");
         sb.append(this.Equipos);
         
         return sb.toString();

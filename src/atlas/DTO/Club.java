@@ -62,6 +62,8 @@ public class Club {
     public void setAñoFundacion(int AñoFundacion) {
         if(AñoFundacion >= 0){
             this.AñoFundacion = AñoFundacion;            
+        }else{
+            System.out.println("El valor ingresado no puede ser negativo (AnoFundacion)");
         }
 
     }
@@ -89,6 +91,8 @@ public class Club {
     public void setValorSuscripcion(int ValorSuscripcion) {
         if(ValorSuscripcion >= 0){
             this.ValorSuscripcion = ValorSuscripcion;        
+        }else{
+            System.out.println("El valor ingresado no puede ser negativo (ValorSuscripcion)");
         }
     }
 
@@ -98,6 +102,39 @@ public class Club {
 
     public void setColores(String Colores) {
         this.Colores = Colores;
+    }
+    
+    public String toSuscripcion(){
+        StringBuilder s = new StringBuilder();
+        s.append("Codigo: ");
+        s.append(this.Codigo);
+        s.append("\nNombre del club: ");
+        s.append(this.Nombre);
+        s.append("\nValor de suscripcion: $");
+        s.append(this.ValorSuscripcion);
+        return s.toString();
+    }
+    
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Codigo: ");
+        sb.append(this.Codigo);
+        sb.append("\nNombre del club: ");
+        sb.append(this.Nombre);
+        sb.append("\nNombre del fundador: ");
+        sb.append(this.NombreFundador);
+        sb.append("\nAnio de fundacion: ");
+        sb.append(this.AñoFundacion);
+        sb.append("\nPais de origen: ");
+        sb.append(this.PaisOrigen);
+        sb.append("\nLema: ");
+        sb.append(this.Lema);
+        sb.append("\nValor de suscripcion: $");
+        sb.append(this.ValorSuscripcion);
+        sb.append("\nColores del equipo: ");
+        sb.append(this.Colores);
+        return sb.toString();
     }
     
 }
